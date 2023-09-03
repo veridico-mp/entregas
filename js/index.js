@@ -12,6 +12,9 @@ document.addEventListener("DOMContentLoaded", function(){
         window.location = "products.html"
     });
 
+
+
+
     let usuario = localStorage.getItem('nombre');
     if (usuario=="" || usuario==null){
         location.href='login.html';

@@ -19,7 +19,7 @@ function checkCont() {
         alert(errorMessage);
         return false;
     } else {
-        localStorage.setItem('nombre', JSON.stringify(nombre.value));
+        localStorage.setItem('nombre', nombre.value);
         return true;
     }
 }

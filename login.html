@@ -3,9 +3,8 @@
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>eMercado - Todo lo que busques está aquí</title>
-  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/estilog.css">
 </head>
 
@@ -13,22 +12,31 @@
   <div class="container">
     <span class="borde"></span>
     <form method="post">
-        <h2>Iniciar <em>Sesión</em></h2>
+        <h2>Iniciar Sesión</h2>
         <div class="inputCont">
-            <label for="nombre">Nombre de Usuario</label>
-            <input id="nombre" type="text" >
-            <i></i>
+          <img src="img/User_icon.png" class="Icono">
+          <input id="nombre" type="text">
+          <label for="nombre" class="label">Usuario</label>
         </div>
+        
         <div class="inputCont">
-            <label for="pass">Password</label>
-            <input id="pass" type="password" >
-            <i></i>
+          <img src="img/Pass_icon.png" class="Icono">
+          <input id="pass" type="password">
+          <label for="pass" class="label">Contraseña</label>
         </div>
+
+
+
         <div class="links">
             <a href="#">¿Olvidaste tú Contraseña?</a>
-            <a href="#"><em>Regístrate</em></a>
+          
         </div>
         <input id="logg" type="submit" value="Ingresar">
+        <div class="links">
+         
+          <a href="#"><em>Regístrarse</em></a>
+      </div>
+        <br>
     </form>
 </div>
   <footer class="text-muted">

@@ -12,34 +12,60 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 justify-content-between">
+
+
+  <header class="header">
+    <div class="logo">
+      <div class="usuario">
+      <img src="img/usuario.png" alt="logo o imagen usuario" class="logo-usuario">
+      <a class="prof-link" id="nombre"></a>
+    
+      <ul class="submenu-logo">
+       
+        <li class="item-logo">
+          <a class="prof-link" id="ajustes">Mi perfil</a> <!--Faltaria agregar un href="" que dirija a la pagina de perfil de usuario-->
+        </li>
+        <li class="item-logo">
+          <a class="prof-link" id="ajustes">Mis compras</a> <!--Faltaria agregar un href="" que dirija a la pagina de compras-->
+        </li>
+        <hr>
+        <li class="item-logo">
+          <input type="button" id="salir" value="Desconectar">
+        </li>
+      </ul>
+    </div>
+    <div class="carrito">
+     <img src="img/Logo-carrito.png" alt="logo carrito de compras" class="logo-carrito">
+    </div>
+    </div>
+  <nav>
+  
+        <ul class="nav-links">
           <li class="nav-item">
             <a class="nav-link active" href="index.html">Inicio</a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="categories.html">Categorías</a>
+           
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
+
           <li class="nav-item">
           </li>
-          <li class="Perfil">
-            <a class="prof-link" id="nombre"></a> <!--Faltaria agregar un href="" qu dirija a la pagina de perfil de usuario-->
 
-            <input type="button" id="salir" value="Desconectar">
-          </li>
+        
         </ul>
-      </div>
+      
     </div>
   </nav>
+</header>
+
+
+
   <main>
     <div class="jumbotron text-center"></div>
     <div class="album py-5 bg-light">

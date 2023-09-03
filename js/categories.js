@@ -141,3 +141,25 @@ document.addEventListener("DOMContentLoaded", function(e){
         showCategoriesList();
     });
 });
+
+document.addEventListener("DOMContentLoaded", function(){
+    //Enlazar a campo de busqueda y lista de artiulos
+    const buscador = document.getElementById('Buscador');
+    const categoryList = document.getElementById('cat-list-container');
+
+    buscador.addEventListener('input', function(){
+        const buscadorText = buscador.value.toLowerCase();
+        const categories = categoryList.querySelectorAll('.list-group-item') ;
+
+        categories.forEach(category =>{
+            const categoryName = category.querySelector('h4').textContent.toLowerCase();
+            const categoryDesc = category.querySelector('p').textContent.toLowerCase();
+
+            if(categoryName.includes(buscadorText) || categoryDesc.includes(buscadorText) ){
+                category.style.display = 'block';
+            } else {
+                category.style.display = 'none'
+            }
+        })
+    })
+})
