@@ -1,0 +1,350 @@
+main{
+  margin-top: 5%;
+  background-color: #EDEDED;
+}
+body{
+  background-color: #EDEDED;
+
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Position the image container (needed to position the left and right arrows) */
+  .container {
+    position: relative;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+    margin-right: 10px;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    border-radius: 0 3px 3px 0;
+      position: absolute;
+      top: 40%; 
+      right: 0; 
+      margin-right: 20px;
+  }
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 0 3px 3px 0;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    
+  }
+  
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 24.5%;
+    height: auto;
+   
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+
+  
+  .demo:hover ~ .column {
+    border: 0.5px solid black;
+  }
+
+  /* Agrega flexbox para el contenedor principal */
+#contenedor {
+  display: flex;
+  flex-wrap: wrap; /* Permite que los elementos se envuelvan en filas si no caben en una sola línea */
+  background-color: white;
+  margin-bottom: 5px;
+  padding: 5px;
+  border-radius: 5px4;
+}
+
+/* Establece un ancho para containerImages */
+.containerImages {
+  flex: 2; /* Ocupa una parte del espacio disponible */
+  max-width: 60%; /* Establece un ancho máximo para evitar que ocupe toda la pantalla */
+  position: relative;
+}
+
+/* Establece un ancho para mainInfo */
+#mainInfo {
+  flex: 1; /* Ocupa una parte del espacio disponible */
+  max-width: 40%; /* Establece un ancho máximo para evitar que ocupe toda la pantalla */
+}
+
+.column img{
+  border-radius: 5px;
+  padding: 2px;
+  border: 0.5px solid gray;
+}
+
+
+
+
+
+#mainInfo{
+  align-items: center;
+  
+
+
+}
+
+
+
+
+#prodCost{
+  font-size: medium;
+  margin-top: 5px;
+}
+
+#cost{
+  font-size: 22px;
+
+}
+
+
+
+
+#funcionesCompra{
+  text-align: center;
+  margin-top: 50px;
+}
+
+#btnBuy{
+  width: 80%;
+  height: 50px;
+  border: 0.5px solid;
+  border-color: #adadad;
+  background-color: #016A70; /* Color de fondo */
+  color: white; /* Color del texto */
+  border-radius: 10px;
+  font-size: 18px;
+  
+  outline: none;
+  box-shadow: 0px 0px 3px rgb(129, 129, 129);
+  margin-top: 5px;
+}
+
+#btnBuy:hover{
+  background-color: #D2DE32; /* Cambia el color de fondo al pasar el mouse */
+  transform: scale(1.02); /* Escala ligeramente el botón al pasar el mouse */
+  transition: .5s;
+  box-shadow: 0px 0px 10px rgb(129, 129, 129);
+
+}
+
+#btnCart{
+  width: 40%;
+  height: 50px;
+  border: 0.2px solid;
+  border-color: #adadad;
+  background-color: #3d4b5e28; /* Color de fondo */
+  color: #016A70; /* Color del texto */
+  border-radius: 10px;
+  font-size: 18px;
+  
+  outline: none;
+  box-shadow: 0px 0px 3px rgb(129, 129, 129);
+  margin-top: 5px;
+
+}
+
+#btnCart:hover{
+  background-color: #D2DE32; /* Cambia el color de fondo al pasar el mouse */
+  transform: scale(1.02); /* Escala ligeramente el botón al pasar el mouse */
+  transition: .5s;
+  box-shadow: 0px 0px 10px rgb(129, 129, 129);
+
+}
+
+
+
+
+
+
+#descripcion{
+ 
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+
+}
+
+
+#descripcion h2{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 150%;
+ 
+
+}
+#descripcion p{
+  font-family: Arial, Helvetica, sans-serif;
+  
+ 
+
+}
+
+
+#relprod{
+  display: flex;
+  background-color: #EDEDED;
+}
+
+
+#prodRelacionados{
+
+  background-color: #EDEDED;
+
+
+}
+
+#prodRelacionados h2{
+  font-family: Arial, Helvetica, sans-serif;
+ font-size: 150%;
+
+
+}
+/* Aplica Flexbox a los elementos containerRelProd */
+/* Estilo para los elementos containerRelProd */
+.containerRelProd {
+  display: flex;
+  flex-direction: column; /* Cambia la dirección de los elementos a columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  text-align: center; /* Alinea el texto al centro */
+  width: 30%; /* Ajusta el ancho según tus necesidades */
+  margin: 5px; /* Ajusta el margen entre los elementos según tus necesidades */
+  border-radius: 5px;
+  padding: 2px;
+ 
+  height: 300px; /* Ajusta la altura según tus necesidades */
+  width: 200px; /* Deja que el ancho sea automático para ajustarse al contenido */
+  background-color: #FFFF;
+}
+
+/* Estilo para las imágenes dentro de containerRelProd */
+.containerRelProd img {
+  width: 200px; /* Ajusta el ancho de la imagen según tus necesidades */
+  height: auto; /* Esto mantiene la proporción original de la imagen */
+  border-radius: 10px;
+  padding: 5px;
+}
+
+/* Estilo para el product.name dentro de containerRelProd */
+.containerRelProd p {
+  margin-top: 5px; /* Ajusta el margen superior según tus necesidades */
+}
+ 
+
+.prod-info{
+  margin: 5px; /* Ajusta el margen entre los elementos según tus necesidades */
+  /* Agrega un margen fino a los elementos containerRelProd */
+  margin-right: 10px; /* Puedes ajustar el valor según tus preferencias */
+
+}
+
+.containerRelProd:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Agrega una sombra suave al pasar el mouse */
+}
+
+#pttts { /* coloca la puntuación a la derecha del div, con un a distancia de 20px de este en la derecha y arriba. hace la letra */
+  position: absolute;
+ right: 20px;
+ font-style: italic;
+ padding-top: 20px;
+}
+
+#ussser{ /*hace el texto más grande y más oscuro. agrega distancia del div a la izquierda y arriba.*/
+  font-weight: bolder;
+  font-size: 120%;
+  padding-left: 10px;
+  padding-top: 20px;
+}
+#commm{
+padding-left: 90px;
+}
+
+#daaate{ /* coloca el texto a la derecha y cambia su color.*/
+position: absolute;
+right: 20px;
+color: #adadad;
+font-style: italic;
+}
+
+#titulocom{ /* al titulo de "Comentarios:" se le agrega distancia a la izquierda*/
+  padding-left: 50px;
+}
+
+.new-comment{ /*se marca el tamaño del espacio para escribir un nuevo comentario y la distancia de este a la izquierda*/
+  width: 60%;
+  padding-left: 100px;
+
+}
+
+#btnNewComment { /* agrega el color de fondo y del borde al botón de nuevo comentario.*/
+  background-color: #016A70;
+  border-color: #06585c;
+}
+
+#btnNewComment:hover{ /* cambia el estilo del botón cuando el mouse está sobre el, cambia el color del texto, del fondo y del borde.*/
+  color: #06585c;
+  background-color: #ffffff;
+  border-color: #adadad;
+}
+
+#commusser { /*imagen de usuario, aparece junto al nombre de usuario en los comentarios. se indica que tiene de tamaño 50px y una distancia a la derecha de 5px*/
+  width: 50px;
+  padding-right: 5px;
+}

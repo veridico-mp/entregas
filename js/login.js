@@ -23,3 +23,48 @@ function checkCont() {
         return true;
     }
 }
+const labelPass = document.querySelector('label[for="pass"]');
+const labelNombre = document.querySelector('label[for="nombre"]');
+
+
+
+
+
+
+
+nombre.addEventListener('input', () => {
+    
+    if (nombre.value.trim() !== '') {
+        labelNombre.style.transform = 'translateY(-30px)';
+       
+    } else {
+        labelNombre.style.transform = 'translateY(-50%)';
+    }
+});
+
+pass.addEventListener('input', () => {
+    
+    if (pass.value.trim() !== '') {
+        labelPass.style.transform = 'translateY(-30px)';
+    } else {
+        labelPass.style.transform = 'translateY(-50%)';
+    }
+});
+
+
+
+/*nombre.addEventListener('input', () => {
+    if (nombre.value.trim() !== '') {
+        document.querySelector('label[for="nombre"]').style.transform = 'translateY(-20px)';
+    } else {
+        document.querySelector('label[for="nombre"]').style.display = 'block';
+    }
+});
+
+pass.addEventListener('input', () => {
+    if (pass.value.trim() !== '') {
+        document.querySelector('label[for="pass"]').style.transform = 'translateY(-20px)';
+    } else {
+        document.querySelector('label[for="pass"]').style.display = 'block';
+    }
+}); */

@@ -7,9 +7,12 @@
   <title>eMercado - Todo lo que busques está aquí</title>
 
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/product-info.css">
+
 </head>
 
 <body>
@@ -22,10 +25,10 @@
       <ul class="submenu-logo">
        
         <li class="item-logo">
-          <a class="prof-link" id="ajustes">Mi perfil</a> <!--Faltaria agregar un href="" que dirija a la pagina de perfil de usuario-->
+          <a class="prof-link" id="miPerfil" href="my-profile.html">Mi perfil</a> <!--Faltaria agregar un href="" que dirija a la pagina de perfil de usuario-->
         </li>
         <li class="item-logo">
-          <a class="prof-link" id="ajustes">Mis compras</a> <!--Faltaria agregar un href="" que dirija a la pagina de compras-->
+          <a class="prof-link" id="misCompras" href="wip.html">Mis compras</a> <!--Faltaria agregar un href="" que dirija a la pagina de compras-->
         </li>
         <hr>
         <li class="item-logo">
@@ -38,7 +41,6 @@
     </div>
     </div>
   <nav>
-  
         <ul class="nav-links">
           <li class="nav-item">
             <a class="nav-link active" href="index.html">Inicio</a>
@@ -63,11 +65,77 @@
   </nav>
 </header>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    <div class="container" id="contenedor">
+     
+
+      <div class="containerImages">
+      <div class='expImg' id='expImg'>
+
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+
+
+        <div class="row" id="row">
+
+        </div>
+     </div>
+      <div class="container form-control" id="mainInfo">
+        <h1 id="prodName"></h1>
+        <span id="prodCost"></span>
+        <br>
+        <div id="funcionesCompra">
+        <span>Cantidad:</span>
+        <select name="selectCantidad" id="selectCantidad">
+          <option value="1">1 unidad</option>
+          <option value="2">2 unidades</option>
+          <option value="3">3 unidades</option>
+          <option value="4">4 unidades</option>
+        </select>
+        <br>
+        <input type="button" value="Comprar" id="btnBuy">
+        <br>
+        <input type="button" value="Agregar al carrito" id="btnCart">
+      </div>
+      </div> 
+      <div class="container form-control" id="descripcion">
+
       </div>
     </div>
+        <div class="container form-control" id="prodRelacionados">
+          <br> <h2>Quienes vieron este producto también compraron</h2>
+        </div>
+        
+        <br> <h2 id="titulocom">Comentarios</h2> <br>
+        <div class="container form-control" id="comments">
+        <!-- Aquí se mostrarán los comentarios existentes -->
+        </div>
+
+        <!-- Formulario para un nuevo comentario -->
+    <div class="new-comment">
+     <br> <h3>Escribir nuevo comentario</h3>
+      <form id="comment-form">
+        <div class="form-group">
+        </div>
+        <div class="form-group">
+          <label for="score">Puntuación:</label>
+          <select class="form-control" id="score" name="score">
+            <option value="-1">Valoración</option>
+            <option value="1">1 - Muy malo</option>
+            <option value="2">2 - Malo</option>
+            <option value="3">3 - Regular </option>
+            <option value="4">4 - Bueno</option>
+            <option value="5">5 - Excelente </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="comment">Comentario:</label>
+          <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+        </div>
+        <br> <button type="submit" class="btn btn-primary" id="btnNewComment">Enviar Comentario</button>
+      </form>
+    
   </main>
   <footer class="text-muted">
     <div class="container">
@@ -77,13 +145,12 @@
       <p>Este sitio forma parte de <a href="https://jovenesaprogramar.edu.uy/" target="_blank">Jovenes a Programar</a></p>
     </div>
   </footer>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+  <div class="lds-ring">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
   </div>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>

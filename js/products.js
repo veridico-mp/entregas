@@ -4,6 +4,30 @@ const URL_CATEGORIES = `https://japceibal.github.io/emercado-api/cats_products/$
 const searchInput = document.getElementById("searchInput");
 
 
+document.addEventListener("DOMContentLoaded", function(){
+
+            //Nombre de usuario y boton desconectar
+            let usuario = localStorage.getItem('nombre');
+            if (usuario=="" || usuario==null){
+                location.href='login.html';
+            }else{
+                document.getElementById('nombre').innerHTML= usuario;
+            }
+        
+            let logout = document.getElementById('salir');
+            logout.addEventListener('click', function(){
+                localStorage.removeItem('nombre');
+                alert('Desconexion exitosa', 'Vuelve pronto');
+                location.href="login.html";
+            })
+})
+
+
+
+
+
+
+
 //Realiza solicitud fetch y espera a que la respuesta se convierta a formato JSON. En caso de error se captura en un bloque catch y muestra mensaje de error en consola
 async function fetchProductData(url) {
     try {
@@ -33,7 +57,7 @@ fetchProductData(URL_CATEGORIES)
     //Toma un array de productos y crea un div a medida que itera por cada elemento, dentro coloca todas sus características   
     function uploadProducts(dataArray, searchTerm = "") {
         storeageOne = dataArray;
-        //console.log(storeageOne);
+        console.log(storeageOne);
         let productsList = document.getElementById("products-list");
         productsList.innerHTML = "";
 
@@ -44,7 +68,7 @@ fetchProductData(URL_CATEGORIES)
             ){
           const productDiv = document.createElement("div");
           productDiv.classList.add("product"); // Agrega la clase "product" para aplicar los estilos CSS
-          productDiv.classList.add("fetched-product"); // Agrega la clase adicional para todos los productos obtenidos a través de fetch
+          productDiv.setAttribute("onclick", `setProdID(${item.id})`);
           //Acá se construyen todos los div que contienen cada producto
           productDiv.innerHTML = `
               <img src="${item.image}">
@@ -57,7 +81,9 @@ fetchProductData(URL_CATEGORIES)
                   <span>${item.soldCount} vendidos</span>
               </div>
           `;
+
           productsList.appendChild(productDiv);
+          
         }}   
         /*Aca esta el filtro de productos segun precio */
         const filterBtn = document.getElementById('rangeFilterCount');
@@ -135,4 +161,12 @@ fetchProductData(URL_CATEGORIES)
         uploadProducts(storeageOne, searchTerm);
     });
 
-    
+//Guardar ID de producto en el localStorage para poder hacer fetch a su informacion en product-info.js
+function setProdID(id) {
+    localStorage.setItem("prodID", id);
+    window.location = "product-info.html";
+}
+
+
+
+

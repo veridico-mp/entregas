@@ -340,10 +340,6 @@ margin-right: 5px;
   color: #ffbc0e;
 }
 
-
-
-
-
 .header .submenu-logo {
   position: absolute;
   background-color: #333333;
@@ -374,7 +370,6 @@ margin-right: 5px;
   transition: .5s;
 }
 
-
 .logo .usuario:hover .submenu-logo {
   visibility: visible;
   opacity: 1;
@@ -398,15 +393,10 @@ margin-right: 5px;
   transform: scale(1.05); /* Escala ligeramente el botón al pasar el mouse */
 }
 
-
-
 .submenu-logo li a:hover{
   color: #ffbc0e;
   transform: scale(1.1);
 }
-
-
-
 
 .logo-carritohover{
   transform: scale(1.2);
@@ -426,11 +416,8 @@ margin-right: 5px;
 
 }
 
-
 .header .logo .carrito{
   margin-top: 5px;
   margin-left: 10px;
 
 }
-
-
