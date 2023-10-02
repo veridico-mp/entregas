@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function(){
     if (usuario=="" || usuario==null){
         location.href='login.html';
     }else{
-        document.getElementById('nombre').innerHTML= usuario;
+        document.getElementById('nombre').innerHTML += usuario;
     }
 
     let logout = document.getElementById('salir');

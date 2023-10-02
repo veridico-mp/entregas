@@ -299,24 +299,24 @@ body{
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Agrega una sombra suave al pasar el mouse */
 }
 
-#pttts { /* coloca la puntuación a la derecha del div, con un a distancia de 20px de este en la derecha y arriba. hace la letra */
+.pttts { /* coloca la puntuación a la derecha del div, con un a distancia de 20px de este en la derecha y arriba. hace la letra */
   position: absolute;
  right: 20px;
  font-style: italic;
  padding-top: 20px;
 }
 
-#ussser{ /*hace el texto más grande y más oscuro. agrega distancia del div a la izquierda y arriba.*/
+.ussser{ /*hace el texto más grande y más oscuro. agrega distancia del div a la izquierda y arriba.*/
   font-weight: bolder;
   font-size: 120%;
   padding-left: 10px;
   padding-top: 20px;
 }
-#commm{
+.commm{
 padding-left: 90px;
 }
 
-#daaate{ /* coloca el texto a la derecha y cambia su color.*/
+.daaate{ /* coloca el texto a la derecha y cambia su color.*/
 position: absolute;
 right: 20px;
 color: #adadad;

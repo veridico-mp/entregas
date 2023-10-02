@@ -38,11 +38,11 @@ commentForm.addEventListener('submit', function (event) {
   const newComment = document.createElement('div');
   newComment.className = 'comment';
   newComment.innerHTML = `
-    <p>Puntuación: ${score}</p>  
-    <p>${username}</p>
-    <p>Comentario: ${commentText}</p>
-    <p>Fecha y Hora: ${formattedDate}</p>
-    <hr>
+    <p class="pttts">Puntuación: ${score}</p>  
+    <p class="ussser">${username}</p>
+    <p class="commm">Comentario: ${commentText}</p>
+    <p class="daaate">Fecha y Hora: ${formattedDate}</p>
+    <br> <hr>
   `;
 
   commentsContainer.appendChild(newComment);
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (usuario == '' || usuario == null) {
     location.href = 'login.html';
   } else {
-    document.getElementById('nombre').innerHTML = usuario;
+    document.getElementById('nombre').innerHTML += usuario;
   }
 
   let logout = document.getElementById('salir');
@@ -176,7 +176,14 @@ function showProductRelacionado(data) {
   // Esta funcion obtendra los productos del array y luego se llamará dentro de showRelatedProducts
   let relprod = document.getElementById('relprod');
   for (let product of data.relatedProducts) {
-    relprod.innerHTML += ` <div class=containerRelProd> <div class="product-info"> <img src=${product.image}>  <p>${product.name}</p> </div></div>`;
+    relprod.innerHTML += `
+    <div class="containerRelProd" id="${product.id}" onclick="setProdID(${product.id})">
+     <div class="product-info">
+     <img src=${product.image}>
+     <p>${product.name}</p> 
+     </div>
+    </div>
+    `;
   }
 }
 
@@ -189,14 +196,18 @@ function showProductComments(data) {
     commentElement.classList.add('comment');
 
     commentElement.innerHTML = `
-      <p id="pttts" > Puntuación: ${comment.score} </p>
-      <p id="ussser"> <img src="img/usuario.png" id="commusser"> ${comment.user}</p>
-      <p id="commm"> ${comment.description}</p>
-      <p id="daaate"> ${comment.dateTime}</p>
+      <p class="pttts" > Puntuación: ${comment.score} </p>
+      <p class="ussser"> <img src="img/usuario.png" id="commusser"> ${comment.user}</p>
+      <p class="commm"> ${comment.description}</p>
+      <p class="daaate"> ${comment.dateTime}</p>
       <br> <hr>
       
     `;
 
     commentsContainer.appendChild(commentElement);
   }
+}
+function setProdID(id) {
+  localStorage.setItem("prodID", id);
+  window.location = "product-info.html";
 }
