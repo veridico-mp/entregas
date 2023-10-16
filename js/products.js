@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function(){
             if (usuario=="" || usuario==null){
                 location.href='login.html';
             }else{
-                document.getElementById('nombre').innerHTML += usuario;
+                document.getElementById('nombre').innerHTML= usuario;
             }
         
             let logout = document.getElementById('salir');
@@ -71,15 +71,19 @@ fetchProductData(URL_CATEGORIES)
           productDiv.setAttribute("onclick", `setProdID(${item.id})`);
           //Acá se construyen todos los div que contienen cada producto
           productDiv.innerHTML = `
-              <img src="${item.image}">
-              <div class="description-container">
-                  <h2>${item.name}</h2>
-                  <p>${item.description}</p>
-                  <p class="price">${item.currency} ${item.cost}</p>
-              </div>
-              <div class="sold-count">
-                  <span>${item.soldCount} vendidos</span>
-              </div>
+            <div class="row">
+                <div class="col col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <img src="${item.image}">
+                </div>
+                <div class="col col-sm-6 col-md-6 col-lg-6 col-xl-6 description-container">
+                    <h2>${item.name}</h2>
+                    <p>${item.description}</p>
+                    <p class="price">${item.currency} ${item.cost}</p>
+                </div>
+                <div class="col sold-count">
+                    <span>${item.soldCount} vendidos</span>
+                </div>
+            </div>
           `;
 
           productsList.appendChild(productDiv);
@@ -166,7 +170,3 @@ function setProdID(id) {
     localStorage.setItem("prodID", id);
     window.location = "product-info.html";
 }
-
-
-
-

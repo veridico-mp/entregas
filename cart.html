@@ -17,7 +17,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">Inicio</a>
-        <button class="navbar-toggler" id="hamburgerBtn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler collapsed" id="hamburgerBtn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon" id="hamburgerSkin"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -31,8 +31,8 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" id="nombre" role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src="img/usuario.png" alt="logo o imagen usuario" class="logo-usuario"></a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Perfil</a></li>
-                <li><a class="dropdown-item" href="#">Carrito</a></li>
+                <li><a class="dropdown-item" href="my-profile.html">Perfil</a></li>
+                <li><a class="dropdown-item" href="cart.html">Carrito</a></li>
                 <li><a class="dropdown-item" href="#">Mis compras</a></li>
                 <li>
                   <div class="dropdown-item">
@@ -51,11 +51,67 @@
     </nav>
   </header>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+
+    
+
+    <!--Cart header-->
+    <div class="container col-sm-12 col-md-8 col-lg-6 px-0">
+      <div class="form-group">
+        <div class="px-2 py-0" >
+            <div class="row topCart">
+              <div class="col-2 fnt-size text-center"></div>
+              <div class="col fnt-size text-center">Nombre</div>
+              <div class="col fnt-size text-center">Precio</div>
+              <div class="col fnt-size text-center">Cantidad</div>
+              <div class="col fnt-size text-center">Subtotal</div>
+            </div>
+        </div>
       </div>
+      <!--Cart content-->
+      <div class="form-group" id="listaCarrito">
+
+      </div>
+      <!--CART END-->
     </div>
+    <br>
+
+    <section class="h-100">
+      <div class="container h-100">
+        <div class="row justify-content-md-center h-100">
+          <div class="card-wrapper" >
+            
+            <div class="card fat" id="formulario">
+              <div class="card-body form-control dark-mode" >
+                <h4 class="card-title">Envío</h4>
+                  <div class="form-group">
+                    <label for="Calle">Calle</label>
+                    <input id="calle" type="text" class="form-control" name="calle" value="" required autofocus>
+                  </div>
+  
+                  <div class="form-group">
+                    <label for="Numero">Numero</label>
+                    <input id="numero" type="number" class="form-control" name="numero" required data-eye>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="Esquina">Esquina</label>
+                    <input id="esquina" type="text" class="form-control" name="esquina" required data-eye>
+                  </div>
+                  
+  
+                  <div class="form-group m-0">
+                    <button type="submit" class="btn btn-primary btn-block">
+                      Comprar
+                    </button>
+                  </div>
+                
+              </div>
+            </div>
+            </div>
+			</div>
+		</div>
+            </section>
+
   </main>
   <footer class="text-muted">
     <div class="container">

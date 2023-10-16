@@ -348,3 +348,24 @@ font-style: italic;
   width: 50px;
   padding-right: 5px;
 }
+
+@media (max-width: 1400px) {
+  #btnCart {
+    font-size: 0; /* Oculta el texto estableciendo el tamaño de fuente a 0 */
+    text-indent: -9999px; /* Mueve el texto fuera del área visible */
+  }
+
+  /* Establece un ancho y alto para la imagen del carrito de compras */
+  #btnCart {
+    content: ''; /* Agrega un contenido vacío */
+    background: url('../img/Logo-carrito.png'); /* Agrega una imagen de carrito de compras como fondo */
+    background-size: contain; /* Ajusta el tamaño de la imagen */
+    opacity: 0.5; /* Ajusta la opacidad de la imagen (0.7 significa 70%) */
+  
+    width: 70px; /* Ancho de la imagen */
+    height: 70px; /* Alto de la imagen */
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+  }
+}

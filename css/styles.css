@@ -13,7 +13,7 @@
 nav a {
   text-decoration: none;
 }
-
+main
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -42,12 +42,18 @@ nav a {
   font-weight: bold;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .jumbotron {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    height: 20vh;
+    background-image: url('../img/login.png');
+    background-size: contain;
+  
   }
+
+  
 }
+
+
 
 .jumbotron p:last-child {
   margin-bottom: 0;
@@ -183,6 +189,45 @@ main {
   margin-top: 60px;
 }
 
+@media (max-width: 768px) {
+  main {
+    margin-top: 0px; /* En dispositivos móviles, se establece a 0 para eliminar el margin-top */
+  }
+
+ 
+  
+}
+
+@media (max-width: 768px) {
+  .col-md-4 {
+    position: relative;
+    max-width: 100%; /* Ancho máximo del 100% del contenedor */
+    margin-bottom: 10px; /* Espacio entre los cuadros */
+  }
+
+  .col-md-4 img {
+    max-width: 100%; /* Ancho máximo del 100% del contenedor */
+    max-height: auto; /* Altura ajustada automáticamente para mantener la proporción */
+    opacity: 0.7;
+  }
+
+  .col-md-4 h3 {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+  }
+
+ 
+  
+  
+}
+
+
 a.custom-card,
 a.custom-card:hover {
   color: inherit;
@@ -224,11 +269,14 @@ margin-right: 5px;
   border: 2px solid rgba(128, 128, 128, 0.253);
 }
 
-.product img {
-  max-width: 250px; 
-  height: auto;
+.product img { 
+  max-width: 100%; 
+  max-width: 100%;
+  height: auto; 
   margin-right: 50px; 
+
 }
+
 
 .product h2 {
   margin: 0;
@@ -271,7 +319,7 @@ margin-right: 5px;
   margin-right: 5%;
 }
 .encabezado{
-  background-color: #016A70;
+  background-color: #147479;
 }
 .container-fluid a{
   color: white;
@@ -348,6 +396,7 @@ margin-right: 5px;
   -webkit-transition: .2s;
   transition: .2s;
 }
+
 .slider:before {
   position: absolute;
   content: "";
@@ -409,3 +458,180 @@ input:checked + .slider:before {
 .dark-mode .new-comment{
   color: #121212;
 }
+
+
+.dark-mode input{
+  background-color: rgb(66, 66, 66);
+  color: white;
+}
+
+.dark-mode input:focus{
+background-color: rgb(66, 66, 66);
+color: white;
+}
+
+
+/* Estilo para ocultar el texto en dispositivos móviles */
+@media (max-width: 1400px) {
+  #btnCart {
+    font-size: 0; /* Oculta el texto estableciendo el tamaño de fuente a 0 */
+    text-indent: -9999px; /* Mueve el texto fuera del área visible */
+  }
+
+  /* Establece un ancho y alto para la imagen del carrito de compras */
+  #btnCart {
+    content: ''; /* Agrega un contenido vacío */
+    background: url('../img/Logo-carrito.png'); /* Agrega una imagen de carrito de compras como fondo */
+    background-size: contain; /* Ajusta el tamaño de la imagen */
+    opacity: 0.5; /* Ajusta la opacidad de la imagen (0.7 significa 70%) */
+    
+    width: 5px; /* Ancho de la imagen */
+    height: 5px; /* Alto de la imagen */
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+  }
+}
+
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Products para movil */
+/* Estilo para ocultar la descripción en dispositivos móviles */
+@media (max-width: 768px) {
+  .description-container p {
+    display: none;
+  }
+
+  .description-container .price {
+    display: block;
+  }
+
+  .sold-count {
+    display: none;
+  }
+
+  .product img {
+    max-width: 100px; /* Ancho máximo deseado en píxeles */
+    max-height: 100px; /* Alto máximo deseado en píxeles */
+  }
+
+/* Oculta el texto "Inicio" y muestra la imagen en dispositivos móviles */
+
+
+
+  .navbar-brand {
+    font-size: 0; /* Oculta el texto estableciendo el tamaño de fuente a 0 */
+    text-indent: -9999px; /* Mueve el texto fuera del área visible */
+    display: flex;
+    align-items: center; /* Centra verticalmente los elementos */
+  }
+
+  .navbar-brand::before {
+    content: "";
+    background: url('../img/Logo en png con relieve.png') no-repeat; /* Agrega una imagen como fondo */
+    background-size: contain; /* Ajusta el tamaño de la imagen para que quepa sin deformarse */
+    width: 200px; /* Ancho de la imagen */
+    height: 80px; /* Alto de la imagen */
+    display: inline-block; /* Permite que la imagen ocupe espacio en línea */
+    margin-right: 20px; /* Agrega un margen derecho para separar la imagen de otros elementos */
+    vertical-align: middle; /* Alinea verticalmente la imagen en la barra de navegación */
+  }
+
+  .navbar-nav .nav-item {
+    margin: 0; /* Elimina cualquier margen en los elementos de navegación */
+    padding: 0; /* Elimina cualquier relleno en los elementos de navegación */
+  }
+
+  #hamburgerBtn {
+    position: absolute; /* Establece una posición absoluta */
+    right: 15px; /* Ajusta la distancia desde la derecha según tu preferencia */
+    top: 50%; /* Alinea verticalmente el botón al centro */
+    transform: translateY(-50%); /* Alinea verticalmente el botón al centro */
+    z-index: 100; /* Asegura que esté en la parte superior del contenido */
+  }
+  
+  #navbarNavDropdown {
+    position: relative; /* Asegura que el elemento contenedor sea relativo para posicionar el botón de manera absoluta */
+  }
+
+  /* Establece un margen superior de, por ejemplo, 20px al div */
+  div.btn-group-toggle {
+  margin-top: 10px;
+  }
+
+  /* Haz el input un poco más largo */
+  #searchInput {
+  width: 300px; /* Ajusta el ancho según tus necesidades */
+  border-radius: 20px; /* Agrega bordes redondeados */
+  padding: 10px; /* Agrega un espacio interno para que los bordes redondeados se vean mejor */
+  margin: 12px;
+  }
+
+  #products-list {
+    margin-top: -80px; /* Ajusta el valor según tus necesidades */
+  }
+
+}
+
+#searchInput {
+  width: 600px; /* Ajusta el ancho según tus necesidades */
+  border-radius: 20px; /* Agrega bordes redondeados */
+  padding: 10px; /* Agrega un espacio interno para que los bordes redondeados se vean mejor */
+  margin: 12px;
+  text-align: left;
+  }
+
+
+  #products-list {
+    margin-top: -80px; /* Ajusta el valor según tus necesidades */
+  }
+
+  /* Aplica flexbox para alinear el contenedor a la izquierda */
+#searchInputContainer {
+  display: flex;
+  justify-content: flex-start; /* Alinea el contenido a la izquierda */
+  align-items: center; /* Centra verticalmente si es necesario */
+}
+
+#searchInput {
+  width: 300px;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 12px;
+}
+
+  
+
+
+  
+
+/*Imagen carrito*/
+.imagenCart{
+  max-width: 50px;
+}
+/*Fin Carrito*/
+/*Input Carrito*/
+.cantidadProd{
+  max-width: 50px;
+}
+/*Fin Input Carrito*/
+/*Tamaño fuente lista del carrito*/
+.fnt-size{
+  font-size: 70%;
+}
+/*Fin Tamaño fuente carrito*/
+/*TopCarrito inicio*/
+.topCart{
+  background-color: #121212;
+  color: white;
+}
+/*Fin TopCarrito*/
+.btnproductss{
+  margin-bottom:40px;
+}
+
+
