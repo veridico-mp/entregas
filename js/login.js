@@ -53,6 +53,12 @@ pass.addEventListener('input', () => {
 
 
 
+
+
+
+
+
+
 /*nombre.addEventListener('input', () => {
     if (nombre.value.trim() !== '') {
         document.querySelector('label[for="nombre"]').style.transform = 'translateY(-20px)';

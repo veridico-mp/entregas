@@ -6,7 +6,8 @@ let URL_com = `https://japceibal.github.io/emercado-api/products_comments/${prod
 let cantidadProducto = 1;
 let precioProducto = 0;
 let productData;
-let productosEnCarrito = [];
+let productosEnCarrito = JSON.parse(localStorage.getItem('cartProducts')) || [];
+// let productosEnCarrito = [];
 
 // Hacer la solicitud fetch para obtener la información del producto
 fetchData(URL_prod);
@@ -241,17 +242,35 @@ function calcularSubtotal(precioProducto) {
 }
 
 function agregarAlCarrito(productData, cantidadProducto) {
-  let productoEnCarrito = {
-    Nombre: productData.name,
-    Descripcion: productData.description,
-    Cantidad: cantidadProducto,
-    Id: productData.id,
-    Imagen: productData.images[0],
-    Divisa: productData.currency,
-    CosteUnidad: productData.cost,
-  };
+  let productoExistente = false;
+  cantidadProducto = parseInt(cantidadProducto); 
 
-  productosEnCarrito.push(productoEnCarrito);
+  for (let i = 0; i < productosEnCarrito.length; i++) {
+    if (productosEnCarrito[i].Id === productData.id) {
+      
+      productosEnCarrito[i].Cantidad += cantidadProducto;
+      productoExistente = true;
+      break;
+    }
+  }
+
+  if (!productoExistente) {
+    let productoEnCarrito = {
+      Nombre: productData.name,
+      Descripcion: productData.description,
+      Cantidad: cantidadProducto,
+      Id: productData.id,
+      Imagen: productData.images[0],
+      Divisa: productData.currency,
+      CosteUnidad: productData.cost,
+    };
+
+    // Agrega el nuevo producto al arreglo de productos en el carrito
+    productosEnCarrito.push(productoEnCarrito);
+  }
+
+  // Guarda el arreglo actualizado en el localStorage
   localStorage.setItem('cartProducts', JSON.stringify(productosEnCarrito));
+
   console.log(cantidadProducto);
 }

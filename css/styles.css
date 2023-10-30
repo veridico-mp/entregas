@@ -5,11 +5,9 @@
 .site-header {
   font-family: 'Verdana', serif !important;
 }
-
 .jumbotron .display-4 {
   font-weight: bold;
 }
-
 nav a {
   text-decoration: none;
 }
@@ -22,13 +20,11 @@ main
   -ms-user-select: none;
   user-select: none;
 }
-
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {
     font-size: 3.5rem;
   }
 }
-
 .jumbotron {
   height: 50vh;
   padding: 5em inherit;
@@ -41,69 +37,51 @@ main
   color: black;
   font-weight: bold;
 }
-
 @media (max-width: 768px) {
   .jumbotron {
     height: 20vh;
     background-image: url('../img/login.png');
     background-size: contain;
-  
   }
-
-  
 }
-
-
-
 .jumbotron p:last-child {
   margin-bottom: 0;
 }
-
 .jumbotron-heading {
   font-weight: 300;
 }
-
 .jumbotron .container {
   max-width: 40rem;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
   text-shadow: 1px 1px 2px grey;
 }
-
 .jumbotron .lead {
   font-size: 38px;
 }
-
 footer {
   padding-top: 3rem;
   padding-bottom: 3rem;
   top: 100%;
-  
 }
-
 footer p {
   margin-bottom: .25rem;
 }
-
 .site-header a {
   color: white;
   transition: ease-in-out color .15s;
 }
-
 .site-header .dropdown-menu a {
   color: black;
 }
-
 .dropzone {
   border: 2px dashed #0087F7;
   border-radius: 5px;
   background: white;
 }
-
 .img-fit {
   max-height: 100%;
 }
-
 .alert {
   position: fixed;
   top: 80px;
@@ -111,7 +89,6 @@ footer p {
   left: 50%;
   transform: translate(-50%, 0);
 }
-
 .lds-ring {
   display: inline-block;
   position: relative;
@@ -120,17 +97,14 @@ footer p {
   top: 50%;
   left: 50%;
 }
-
 .cursor-active {
   cursor: pointer;
 }
-
 .left {
   float: left;
   padding: 4px;
   background-color: rgba(255, 255, 255, 0.5);
 }
-
 .lds-ring div {
   box-sizing: border-box;
   display: block;
@@ -143,36 +117,29 @@ footer p {
   animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   border-color: #fff transparent transparent transparent;
 }
-
 .lds-ring div:nth-child(1) {
   animation-delay: -0.45s;
 }
-
 .lds-ring div:nth-child(2) {
   animation-delay: -0.3s;
 }
-
 .lds-ring div:nth-child(3) {
   animation-delay: -0.15s;
 }
-
 @keyframes lds-ring {
   0% {
     transform: rotate(0deg);
   }
-
   100% {
     transform: rotate(360deg);
   }
 }
-
 .signin {
   width: 100%;
   max-width: 330px;
   padding: 15px;
   margin: auto;
 }
-
 #spinner-wrapper {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.5);
@@ -183,19 +150,9 @@ footer p {
   z-index: 1021;
   display: none;
 }
-
 main {
   min-height: calc(100vh - 60px); 
   margin-top: 60px;
-}
-
-@media (max-width: 768px) {
-  main {
-    margin-top: 0px; /* En dispositivos móviles, se establece a 0 para eliminar el margin-top */
-  }
-
- 
-  
 }
 
 @media (max-width: 768px) {
@@ -204,13 +161,11 @@ main {
     max-width: 100%; /* Ancho máximo del 100% del contenedor */
     margin-bottom: 10px; /* Espacio entre los cuadros */
   }
-
   .col-md-4 img {
     max-width: 100%; /* Ancho máximo del 100% del contenedor */
     max-height: auto; /* Altura ajustada automáticamente para mantener la proporción */
     opacity: 0.7;
   }
-
   .col-md-4 h3 {
     position: absolute;
     top: 10%;
@@ -221,44 +176,25 @@ main {
     margin: 0;
     text-align: center;
   }
-
- 
-  
-  
 }
-
-
 a.custom-card,
 a.custom-card:hover {
   color: inherit;
   text-decoration: inherit;
 }
-
 .checked {
   color: orange;
 }
-
-
-
-nav{
-
-  float: inline-end;
-}
-
 .common-styled-product {
   background-color: #f9f9f9;
   border-top: 1px solid #5c5c5c;
 }
-
 #products-list{
   margin-top: 20px;
 }
-
 #searchInput{
-margin-right: 5px;
-
+  margin-right: 5px;
 }
-
 .product {
   background-color: rgb(255, 255, 255);
   display: flex;
@@ -268,52 +204,41 @@ margin-right: 5px;
   border-radius: 5px;
   border: 2px solid rgba(128, 128, 128, 0.253);
 }
-
 .product img { 
   max-width: 100%; 
   max-width: 100%;
   height: auto; 
   margin-right: 50px; 
-
 }
-
-
 .product h2 {
   margin: 0;
   font-family: 'Verdana', serif ;
   font-weight: thin;
-
 }
-
 .product .description-container {
   flex-grow: 1; /* Permite que la descripción ocupe todo el espacio disponible */
   text-align: left; /* Alinea la descripción a la derecha */
 }
-
 .product:hover {
   background-color: #f0f0f0; 
   transition: 0.5s;
   cursor: pointer;
   box-shadow: 0px 0px 10px rgb(129, 129, 129);
   transform: translate3d(0px, -5px, -35px);
-
 }
-
 .product:hover .sold-count{
   color: red;
   text-decoration: underline;
 }
-
 .product img:hover {
   opacity: 75%;
   transition: 1s; 
 }
-
 .cuerpo{
   background-image: url('/img/fondoautos.png');
   margin-top: 70px;
 }
-/*Esrilo encabezado inicio-------------------------------*/
+/*Estilo encabezado inicio-------------------------------*/
 .logo-usuario{
   max-width: 30px;
   margin-right: 5%;
@@ -396,7 +321,6 @@ margin-right: 5px;
   -webkit-transition: .2s;
   transition: .2s;
 }
-
 .slider:before {
   position: absolute;
   content: "";
@@ -421,12 +345,6 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 /*Estilo encabezado fin----------------------------*/
-
-/* Estilos para el modo claro */
-.light-mode {
-  background-color: #ffffff;
-  color: #000000;
-}
 
 /* Estilos para el modo oscuro */
 .dark-mode {
@@ -459,6 +377,41 @@ input:checked + .slider:before {
   color: #121212;
 }
 
+
+.dark-mode .modal-content{
+  background-color: rgb(66, 66, 66);
+  color: white;
+}
+
+.dark-mode #mensajeErrorNumero1 {
+  color: rgb(43, 168, 240);
+  font-size: 13px;
+}
+
+.dark-mode #mensajeErrorCodigo {
+  color: rgb(43, 168, 240);
+  font-size: 13px;
+}
+
+.dark-mode #mensajeErrorVencimiento {
+  color: rgb(43, 168, 240);
+  font-size: 13px;
+}
+
+.dark-mode #mensajeErrorNumCuenta {
+  color: rgb(43, 168, 240);
+  font-size: 13px;
+}
+
+.dark-mode #tipoEnvio{
+  background-color: rgb(19, 18, 18);
+  color: white;
+}
+
+.dark-mode #tiposEnvios{
+  background-color: rgb(43, 42, 42);
+  color: white;
+}
 
 .dark-mode input{
   background-color: rgb(66, 66, 66);
@@ -512,11 +465,6 @@ color: white;
 
   .sold-count {
     display: none;
-  }
-
-  .product img {
-    max-width: 100px; /* Ancho máximo deseado en píxeles */
-    max-height: 100px; /* Alto máximo deseado en píxeles */
   }
 
 /* Oculta el texto "Inicio" y muestra la imagen en dispositivos móviles */
@@ -603,12 +551,6 @@ color: white;
   padding: 10px;
   margin: 12px;
 }
-
-  
-
-
-  
-
 /*Imagen carrito*/
 .imagenCart{
   max-width: 50px;
@@ -634,4 +576,55 @@ color: white;
   margin-bottom:40px;
 }
 
+/*Inicio CostosCarrito*/
+.costosF {
+  width: 100%;
+  border: 2px solid;
+  border-color:  rgb(63, 61, 61);
+  margin: 2px 2px ;
+  padding: 8px;
+}
 
+.costp{
+  width: 85%;
+  font-size: 15px;
+  color: #969191;
+}
+
+.inputF1, .inputF2, .inputF3{
+  position: absolute;
+  max-width: 55px;
+  border:0;
+  float:right;
+}
+
+.f3{
+  height: 9vh;
+}
+.f3>.usd{
+  transform: translate(-35px, -15px);
+}
+
+.inputF3{
+  transform: translate(0px, -15px);
+}
+
+.usd{
+  transform: translate(-35px);
+  position: absolute;
+  width: 100%;
+  max-width: 60px;
+  font-size:14px ;
+  float: right;
+}
+
+.form2{
+   margin-top: 20px;
+}
+
+/*Fin CostosCarrito*/
+
+#mensajeErrorNumero1, #mensajeErrorCodigo, #mensajeErrorVencimiento, #mensajeErrorNumCuenta, #mensajeErrorCalle, #mensajeErrorNumero, #mensajeErrorEsquina, #errorMensaje, #mensajedeError{
+  color: red;
+  font-size: 13px;
+}

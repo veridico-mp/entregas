@@ -16,7 +16,7 @@
 </head>
 
 <body class="light-mode">
-  <header class="encabezado">
+  <header class="encabezado fixed-top">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">Inicio</a>
@@ -53,6 +53,7 @@
       </div>
     </nav>
   </header>
+  
   <main>
     <div class="container" id="contenedor">
      
@@ -84,7 +85,9 @@
         <br>
         <input type="button" class="btn btn-block mb-2" value="Comprar" id="btnBuy">
         <br>
-        <input type="button" class="btn btn-block mb-2" value="Agregar al carrito" id="btnCart">
+        <button type="button" class="btn btn-secondary mb-2" data-bs-container="body" value="Agregar al carrito" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Producto añadido" id="btnCart">
+          Agregar al carrito
+        </button>
       </div>
       </div> 
       <div class="container form-control" id="descripcion">
