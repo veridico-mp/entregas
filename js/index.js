@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function(){
     let logout = document.getElementById('salir');
     logout.addEventListener('click', function(){
         localStorage.removeItem('nombre');
+        localStorage.removeItem('email');
         alert('Desconexion exitosa', 'Vuelve pronto');
         location.href="login.html";
         

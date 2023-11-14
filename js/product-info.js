@@ -21,6 +21,11 @@ document.querySelector('#btnCart').addEventListener('click', function () {
   agregarAlCarrito(productData, cantidadProducto);
 });
 
+document.querySelector('#btnBuy').addEventListener('click', function () {
+  agregarAlCarrito(productData, cantidadProducto);
+  window.location.href = "cart.html";
+});
+
 // Obtener una referencia al formulario y al contenedor de comentarios
 const commentForm = document.getElementById('comment-form');
 const commentsContainer = document.getElementById('comments');
@@ -77,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let logout = document.getElementById('salir');
   logout.addEventListener('click', function () {
     localStorage.removeItem('nombre');
+    localStorage.removeItem('email');
     alert('Desconexion exitosa', 'Vuelve pronto');
     location.href = 'login.html';
   });
@@ -126,7 +132,7 @@ function showImgList(data) {
   let numImg = 1;
   for (let one of data.images) {
     imgList.innerHTML += `
-      <div class="mySlides">
+      <div class="mySlides ">
           <div class="numbertext">${numImg} / ${data.images.length}</div>
           <img class="img-fluid" src='${one}' onclick='expose("${one}") style="width:100%'>
       </div>`;
@@ -189,7 +195,7 @@ function showRelatedProducts(data) {
   // Funcion que mostrara los productos relacionados
   let relproduct = document.getElementById('prodRelacionados');
   relproduct.innerHTML += `
-  <div class='container form-control' id='relprod'></div>`;
+  <div class='container form-control ' id='relprod'></div>`;
   showProductRelacionado(data);
 }
 function showProductRelacionado(data) {
@@ -197,7 +203,7 @@ function showProductRelacionado(data) {
   let relprod = document.getElementById('relprod');
   for (let product of data.relatedProducts) {
     relprod.innerHTML += `
-    <div class="containerRelProd" id="${product.id}" onclick="setProdID(${product.id})">
+    <div class="containerRelProd dMode" id="${product.id}" onclick="setProdID(${product.id})">
      <div class="product-info">
      <img class="img-fluid"src=${product.image}>
      <p>${product.name}</p> 
@@ -243,12 +249,11 @@ function calcularSubtotal(precioProducto) {
 
 function agregarAlCarrito(productData, cantidadProducto) {
   let productoExistente = false;
-  cantidadProducto = parseInt(cantidadProducto); 
+  cantidadProducto = parseInt(cantidadProducto);
 
   for (let i = 0; i < productosEnCarrito.length; i++) {
-    if (productosEnCarrito[i].Id === productData.id) {
-      
-      productosEnCarrito[i].Cantidad += cantidadProducto;
+    if (productosEnCarrito[i].id === productData.id) {
+      productosEnCarrito[i].count += cantidadProducto;
       productoExistente = true;
       break;
     }
@@ -256,13 +261,13 @@ function agregarAlCarrito(productData, cantidadProducto) {
 
   if (!productoExistente) {
     let productoEnCarrito = {
-      Nombre: productData.name,
-      Descripcion: productData.description,
-      Cantidad: cantidadProducto,
-      Id: productData.id,
-      Imagen: productData.images[0],
-      Divisa: productData.currency,
-      CosteUnidad: productData.cost,
+      name: productData.name,
+      description: productData.description,
+      count: cantidadProducto,
+      id: productData.id,
+      image: productData.images[0],
+      currency: productData.currency,
+      cost: productData.cost,
     };
 
     // Agrega el nuevo producto al arreglo de productos en el carrito

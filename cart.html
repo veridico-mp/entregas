@@ -52,175 +52,167 @@
     </nav>
   </header>
   <main>
-
-    
-
-    <!--Cart header-->
-    <div class="container col-sm-12 col-md-8 col-lg-6 px-0">
-      <div class="form-group">
-        <div class="px-2 py-0" >
-            <div class="row topCart">
-              <div class="col-2 fnt-size text-center"></div>
-              <div class="col fnt-size text-center">Nombre</div>
-              <div class="col fnt-size text-center">Precio</div>
-              <div class="col fnt-size text-center">Cantidad</div>
-              <div class="col fnt-size text-center">Subtotal</div>
-            </div>
-        </div>
-      </div>
-      <!--Cart content-->
-      <div class="form-group" id="listaCarrito">
-
-      </div>
-      <!--CART END-->
-    </div>
-    <br>
-
-    <section class="h-100">
-      <div class="container h-100">
-        <div class="row justify-content-md-center h-100">
-          <div class="card-wrapper" >
-            <div class="card fat" id="tipoEnvio">
-              <div class="card-body form-group" id="tipoEnvio">
-                <h4>Tipo de envío</h4>
-                <div class="form-control" id="tiposEnvios">
-                  <input type="radio" name="envío" id="envioStandard"> <span>Standard (5%)</span>
+    <!--Cart content--><!--id="listaCarrito"-->
+    <section class="h-100 gradient-custom">
+      <div class="container py-5">
+        <div class="row d-flex justify-content-center my-4">
+          <div class="col-md-8">
+            <div class="card mb-4">
+              <div class="card-header py-3">
+                <h5 class="mb-0">Carrito</h5>
               </div>
-              <div class="form-control" id="tiposEnvios">
-                <input type="radio" name="envío" id="envioRapido"> <span>Rápido (7%)</span>
-              </div>
-              <div class="form-control" id="tiposEnvios">
-                <input type="radio" name="envío" id="envioExpress"> <span>Express (15%)</span>
-              </div>
-              <div id="errorMensaje">
-              </div>
-            </div>
-            <!--DATOS DE ENVÍO-->
-            <div class="card fat" id="formulario">
-              <div class="card-body form-control dark-mode" >
-                <h4 class="card-title">Envío</h4>
-                  <div class="form-group">
-                    <label for="Calle">Calle</label>
-                    <input id="calle" type="text" class="form-control" name="calle" value="" required autofocus>
-                    <div id="mensajeErrorCalle" class="error"></div>
-                  </div>
-  
-                  <div class="form-group">
-                    <label for="Numero">Numero</label>
-                    <input id="numerodireccion" type="number" class="form-control" name="numero" required data-eye>
-                    <div id="mensajeErrorNumero" class="error"></div>
-                  </div>
-                  
-                  <div class="form-group">
-                    <label for="Esquina">Esquina</label>
-                    <input id="esquina" type="text" class="form-control" name="esquina" required data-eye>
-                    <div id="mensajeErrorEsquina" class="error"></div>
-                  </div>
-                  
-          
-                 
+              <div class="card-body" id="listaCarrito">
                 
               </div>
             </div>
-            </div>
-            <br>
-             <div class="card fat dark-mode" id="formulario">
-                <div class="card-body form-control dark-mode form2">
-                  <h4 class="card-title">Costos</h4>
-                  <div class="form-group costosF" >
-                    <h6>Subtotal</h6>
-                    <label for="costo" class="costp">Monto inicial</label>
-                    <input class="inputF1" type="text" id="costo" value="0" readonly> <span class="usd">USD</span>
-                  </div>  
-          
-                  <div class="form-group costosF">
-                    <h6>Costo de envío</h6>
-                    <label for="envio" class="costp"> Según el tipo de envío</label>
-                    <input class="inputF2" type="text" id="envio" value="0" readonly><span class="usd">USD</span>
-                  </div>
-                  
-                  <div class="form-group costosF f3">
-                    <h6>Total($)</h6>
-                    <label for="Total" class="costp"></label>
-                   <input class="inputF3" type="text" id="total" value="0" readonly> <span class="usd">USD</span>
-                  </div>
-                </div> 
-             </div>
-            </div>
-          </div><br>
-            </section>
-            <div class="container">
-              <!-- Button trigger modal -->
- <!-- Button trigger modal -->
- <div>
-    <!-- Button trigger modal -->
-<h5 class="h5">Forma de Pago</h5>
-<label for="#staticBackdrop" class="form-label" id="DebeCambiar">No ha seleccionado</label>
-<a href="#staticBackdrop" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Seleccionar</a>
- <div id="mensajedeError" class="error">
-  
- </div>
- 
- <!-- Modal -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title text-primary fs-5" id="staticBackdropLabel">Selecciona tu método de pago</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="container" id="tarjeta">
-        <input type="radio" name="SelMetodo" class="form-check-input" id="tarjetacredito">
-        <label for="tarjetacredito" class="form-label text-center">Tarjeta de crédito</label>
-        </div>
-        <hr class="border-top border-dark">
-        <div class="container">
-          <label for="numero1" class="form-label">Número de Tarjeta</label>
-          <br>
-          <input type="text" class="form-control-sm" id="numero1">
-          <div id="mensajeErrorNumero1" class="error"></div>
-          <br>
-          <label for="codigo" class="form-label">Código de Seg</label>
-          <input type="text" class="form-control-sm" id="codigo">
-          <div id="mensajeErrorCodigo" class="error"></div>
-          <br>
-          <label for="vencimiento" class="form-label">Vencimiento</label>
-          <input type="text" class="form-control-sm" id="vencimiento" name="vencimiento"  pattern="^(0[1-9]|1[0-2])/(19[3-9][0-9]|20[0-2][0-9])" placeholder="MM/AAAA">
-          <div id="mensajeErrorVencimiento" class="error"></div> 
-          <br>
-          <input type="radio" name="SelMetodo" class="form-check-input" id="Transferencia">
-          <label for="Transferencia"  class="form-label text-center">Transferencia Bancaria</label>
-          <br>
           </div>
-          <hr class="border-top border-dark">
-          <div class="container">
-          <label for="Numcuenta">Número de cuenta</label>
-          <input type="text" class="form-control-sm" id="Numcuenta">
-          <div id="mensajeErrorNumCuenta" class="error"></div>
+          <!--Costos -->
+          <div class="col-md-4">
+            <div class="card mb-4">
+              <div class="card-header py-3">
+                <h5 class="mb-0">Costos</h5>
+              </div>
+              <div class="card-body">
+                <div class="card fat" id="tipoEnvio">
+                    <h4>Tipo de envío</h4>
+                    <div class="form-control" id="tiposEnvios">
+                      <input type="radio" name="envío" id="envioStandard" onclick="actualizarCostos()" checked> <span>Standard (5%)</span>
+                  </div>
+                  <div class="form-control" id="tiposEnvios">
+                    <input type="radio" name="envío" id="envioRapido" onclick="actualizarCostos()"> <span>Rápido (7%)</span>
+                  </div>
+                  <div class="form-control" id="tiposEnvios">
+                    <input type="radio" name="envío" id="envioExpress" onclick="actualizarCostos()"> <span>Express (15%)</span>
+                  </div>
+                  <div id="errorMensaje">
+                  </div>
+                  <a class="btn btn-primary btn-lg btn-block" href="#modalDireccion" data-bs-toggle="modal" data-bs-target="#modalDireccion " >Dirección de envio</a>
+                </div>
+              </div>
+              <!-- Costo-->
+              <div class="card-header py-3">
+                <h5 class="mb-0">Costos</h5>
+              </div>
+              <div class="card-body">
+                <ul class="list-group list-group-flush">
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                    Productos
+                      <div id="costo">0</div>
+                  </li>
+                  <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                    Envio
+                    <div id="envio">0</div>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                    <div>
+                      <strong>Total</strong>
+                    </div>
+                    <div id="total">0</div>
+                  </li>
+                </ul>
+                <a class="btn btn-primary btn-lg btn-block" href="#staticBackdrop" data-bs-toggle="modal" data-bs-target="#staticBackdrop " >Metodo de Pago</a>
+              </div>
+            </div>
+          </div>
         </div>
-        
       </div>
-    
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver atrás</button>
-        <button type="button" class="btn btn-primary"  id="validar">Validar</button>
-  
+    </section>
+    <!--CART END-->
+    <br>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title text-primary fs-5" id="staticBackdropLabel">Selecciona tu método de pago</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container" id="tarjeta">
+              <input type="radio" name="SelMetodo" class="form-check-input" id="tarjetacredito">
+              <label for="tarjetacredito" class="form-label text-center">Tarjeta de crédito</label>
+            </div>
+            <hr class="border-top border-dark">
+            <div class="container">
+              <label for="numero1" class="form-label">Número de Tarjeta</label>
+              <br>
+              <input type="text" class="form-control-sm" id="numero1">
+              <div id="mensajeErrorNumero1" class="error"></div>
+              <br>
+              <label for="codigo" class="form-label">Código de Seg</label>
+              <input type="text" class="form-control-sm" id="codigo">
+              <div id="mensajeErrorCodigo" class="error"></div>
+              <br>
+              <label for="vencimiento" class="form-label">Vencimiento</label>
+              <input type="text" class="form-control-sm" id="vencimiento" name="vencimiento"  pattern="^(0[1-9]|1[0-2])/(19[3-9][0-9]|20[0-2][0-9])" placeholder="MM/AAAA">
+              <div id="mensajeErrorVencimiento" class="error"></div> 
+              <br>
+              <input type="radio" name="SelMetodo" class="form-check-input" id="Transferencia">
+              <label for="Transferencia"  class="form-label text-center">Transferencia Bancaria</label>
+              <br>
+            </div>
+            <hr class="border-top border-dark">
+            <div class="container">
+              <label for="Numcuenta">Número de cuenta</label>
+              <input type="text" class="form-control-sm" id="Numcuenta">
+              <div id="mensajeErrorNumCuenta" class="error"></div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver atrás</button>
+            <button type="button" class="btn btn-primary"  id="validar">Validar</button>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  </div>
-            </div><br>
-  
-            <div class="container">
-            <button class="btn-primary col-lg-12 col-md-12 col-sm-12 btn-lg" id="BotóndeCompra">Finalizar Compra</button>
+    <!-- Modal Direccion-->
+    <div class="modal fade" id="modalDireccion" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title text-primary fs-5" id="staticBackdropLabel">Dirección de envio</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-  
-          <div class="alert alert-success animate__animated animate__bounceIn animate__center" role="alert" id="alertaExito" style="display: none;">
-            Has comprado con éxito
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="Calle">Calle</label>
+              <input id="calle" type="text" class="form-control" name="calle" value="" required autofocus>
+              <div id="mensajeErrorCalle" class="error"></div>
+            </div>
+            <div class="form-group">
+              <label for="Numero">Numero</label>
+              <input id="numerodireccion" type="number" class="form-control" name="numero" required data-eye>
+              <div id="mensajeErrorNumero" class="error"></div>
+            </div>  
+            <div class="form-group">
+              <label for="Esquina">Esquina</label>
+              <input id="esquina" type="text" class="form-control" name="esquina" required data-eye>
+              <div id="mensajeErrorEsquina" class="error"></div>
+            </div>
           </div>
- 
-
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver atrás</button>
+            <button type="button" class="btn btn-primary"  id="validarDireccion">Validar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <button class="btn-primary col-lg-12 col-md-12 col-sm-12 btn-lg" id="botonCompra">Finalizar Compra</button>
+    </div>
+    <!--Alertas de error-->
+    <div class="alert alert-success animate__animated animate__bounceIn animate__center auto-close" role="alert" id="alertaPagoExito" style="display: none;">
+      Has colocado un metodo de pago con éxito
+    </div>       
+    <div class="alert alert-success animate__animated animate__bounceIn animate__center auto-close" role="alert" id="alertaDireccionExito" style="display: none;">
+      Has colocado la dirección con éxito
+    </div>
+    <!--Alerta de succes-->
+    <div class="alert alert-success animate__animated animate__bounceIn animate__center auto-close" role="alert" id="alertaExito" style="display: none;">
+      Has comprado con éxito
+    </div>
   </main>
   <footer class="text-muted">
     <div class="container">

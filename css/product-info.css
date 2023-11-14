@@ -110,6 +110,7 @@ body{
   margin-bottom: 5px;
   padding: 5px;
   border-radius: 5px4;
+  margin-top: 120px; 
 }
 
 /* Establece un ancho para containerImages */
@@ -354,6 +355,11 @@ font-style: italic;
     font-size: 0; /* Oculta el texto estableciendo el tamaño de fuente a 0 */
     text-indent: -9999px; /* Mueve el texto fuera del área visible */
   }
+  #units {
+    width: 100%;
+    box-sizing: border-box;
+    
+}
 
   /* Establece un ancho y alto para la imagen del carrito de compras */
   #btnCart {

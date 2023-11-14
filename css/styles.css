@@ -423,6 +423,21 @@ background-color: rgb(66, 66, 66);
 color: white;
 }
 
+.dark-mode #mainInfo{
+  background-color: rgb(19, 18, 18);
+  color: white;
+}
+
+.dark-mode #descripcion{
+  background-color: rgb(19, 18, 18);
+  color: white;
+}
+
+.dark-mode .dMode{
+  background-color: rgb(19, 18, 18);
+  color: white;
+}
+
 
 /* Estilo para ocultar el texto en dispositivos móviles */
 @media (max-width: 1400px) {
@@ -557,9 +572,7 @@ color: white;
 }
 /*Fin Carrito*/
 /*Input Carrito*/
-.cantidadProd{
-  max-width: 50px;
-}
+
 /*Fin Input Carrito*/
 /*Tamaño fuente lista del carrito*/
 .fnt-size{
@@ -627,4 +640,16 @@ color: white;
 #mensajeErrorNumero1, #mensajeErrorCodigo, #mensajeErrorVencimiento, #mensajeErrorNumCuenta, #mensajeErrorCalle, #mensajeErrorNumero, #mensajeErrorEsquina, #errorMensaje, #mensajedeError{
   color: red;
   font-size: 13px;
+}
+
+/* Estilo para recuadro de foto del perfil */
+
+.recuadro-imagen {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto; /* Esto centra el elemento horizontalmente */
+  border: 2px solid #000;
+  border-radius: 10px;
 }

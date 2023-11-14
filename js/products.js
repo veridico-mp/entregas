@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let logout = document.getElementById('salir');
     logout.addEventListener('click', function () {
       localStorage.removeItem('nombre');
+      localStorage.removeItem('email');
       alert('Desconexion exitosa', 'Vuelve pronto');
       location.href = 'login.html';
     });
@@ -41,8 +42,6 @@ async function fetchProductData(url) {
 //Se llama a la funcion fetchProductData() con la URL. Cuando se resuelve la promesa muestra los datos con uploadProducts(), sino se crea un mensaje de error
 fetchProductData(URL_CATEGORIES)
     .then(data => {
-    
-        localStorage.setItem('backUp', JSON.stringify(data.products));
         uploadProducts(data.products);
     })
     .catch(error => {
@@ -56,7 +55,6 @@ fetchProductData(URL_CATEGORIES)
     //Toma un array de productos y crea un div a medida que itera por cada elemento, dentro coloca todas sus características   
     function uploadProducts(dataArray, searchTerm = "") {
         storeageOne = dataArray;
-        console.log(storeageOne);
         let productsList = document.getElementById("products-list");
         productsList.innerHTML = "";
 

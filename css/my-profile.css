@@ -1,0 +1,22 @@
+.inputText{
+    width: 200%;
+}
+input::placeholder {
+    font-weight: bold;
+    opacity: 0.5;
+    color: gray;
+    font-size: 70%;
+}
+/*.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}*/
+/*@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+}*/

@@ -6,6 +6,7 @@ let currentSortCriteria = undefined;
 let minCount = undefined;
 let maxCount = undefined;
 
+//Ordenar categorías
 function sortCategories(criteria, array){
     let result = [];
     if (criteria === ORDER_ASC_BY_NAME)
@@ -34,12 +35,13 @@ function sortCategories(criteria, array){
 
     return result;
 }
-
+//Guardar id de categoría seleccionada y redirigir
 function setCatID(id) {
     localStorage.setItem("catID", id);
     window.location = "products.html"
 }
 
+//Lista de categorías con filtros
 function showCategoriesList(){
 
     let htmlContentToAppend = "";
@@ -70,7 +72,7 @@ function showCategoriesList(){
         document.getElementById("cat-list-container").innerHTML = htmlContentToAppend;
     }
 }
-
+//Ordenar y mostrar categorías
 function sortAndShowCategories(sortCriteria, categoriesArray){
     currentSortCriteria = sortCriteria;
 
@@ -108,40 +110,8 @@ document.addEventListener("DOMContentLoaded", function(e){
         sortAndShowCategories(ORDER_BY_PROD_COUNT);
     });
 
-    document.getElementById("clearRangeFilter").addEventListener("click", function(){
-        document.getElementById("rangeFilterCountMin").value = "";
-        document.getElementById("rangeFilterCountMax").value = "";
-
-        minCount = undefined;
-        maxCount = undefined;
-
-        showCategoriesList();
-    });
-
-    document.getElementById("rangeFilterCount").addEventListener("click", function(){
-        //Obtengo el mínimo y máximo de los intervalos para filtrar por cantidad
-        //de productos por categoría.
-        minCount = document.getElementById("rangeFilterCountMin").value;
-        maxCount = document.getElementById("rangeFilterCountMax").value;
-
-        if ((minCount != undefined) && (minCount != "") && (parseInt(minCount)) >= 0){
-            minCount = parseInt(minCount);
-        }
-        else{
-            minCount = undefined;
-        }
-
-        if ((maxCount != undefined) && (maxCount != "") && (parseInt(maxCount)) >= 0){
-            maxCount = parseInt(maxCount);
-        }
-        else{
-            maxCount = undefined;
-        }
-
-        showCategoriesList();
-    });
 });
-
+//Evento buscador y filtrado de la lista de categorías en función del texto ingresado
 document.addEventListener("DOMContentLoaded", function(){
     //Enlazar a campo de busqueda y lista de artiulos
     const buscador = document.getElementById('Buscador');
@@ -173,6 +143,7 @@ document.addEventListener("DOMContentLoaded", function(){
     let logout = document.getElementById('salir');
     logout.addEventListener('click', function(){
         localStorage.removeItem('nombre');
+        localStorage.removeItem('email');
         alert('Desconexion exitosa', 'Vuelve pronto');
         location.href="login.html";
     })
