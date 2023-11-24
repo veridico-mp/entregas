@@ -3,9 +3,7 @@ let costeDeProductosTotal = 0;
 let costeEnvio = 0;
 
 // Recuperar datos de localStorage
-let cartFromLocalStorage = JSON.parse(localStorage.getItem('cartProducts')) || [];
 let productosEnCarrito = JSON.parse(localStorage.getItem('cartProducts')) || [];
-
 
 fetch(URL_CART)
 .then(response => response.json())
@@ -19,9 +17,9 @@ fetch(URL_CART)
 document.addEventListener('DOMContentLoaded', function () {
   // Si existe un carrito almacenado en el almacenamiento local, se llaman a las funciones 
  
-  if(cartFromLocalStorage){
-    console.log(cartFromLocalStorage);
-    showListFromStorage(cartFromLocalStorage);
+  if(productosEnCarrito){
+    console.log(productosEnCarrito);
+    showListFromStorage(productosEnCarrito);
     actualizarCostos();
   }
 
@@ -63,7 +61,7 @@ function showListFromStorage(data) {
       <p><strong>${article.name}</strong></p>
       <!-- Price -->
       <div class="text-start text-md-center">
-        <div>${article.currency}</div>
+        <div class="currency">${article.currency}</div>
         <div class="cost">${article.cost}</div>
       </div>
       <!-- Price -->
@@ -81,7 +79,7 @@ function showListFromStorage(data) {
           <i class="fas fa-minus"></i>
         </button>
         <div class="form-outline">
-          <input id="form1" min="0" name="quantity" value="${article.count}" type="number" class="form-control cantidadProd" />
+          <input id="form1" min="1" name="quantity" value="${article.count}" type="number" class="form-control cantidadProd" />
           <label class="form-label" for="form1">Cantidad</label>
         </div>
         <button class="btn btn-primary px-3 ms-2"
@@ -116,11 +114,13 @@ function modificarSubtotal() {
   let cantidadInputs = document.querySelectorAll('.cantidadProd');
   let preciosProducto = document.querySelectorAll('.cost');
   let subtotales = document.querySelectorAll('.subTot');
+  let currency = document.querySelectorAll('.currency');
 
   for (let i = 0; i < cantidadInputs.length; i++) {
     let cantidad = parseInt(cantidadInputs[i].value);
     let precio = parseFloat(preciosProducto[i].textContent);
-    subtotales[i].innerHTML = cantidad * precio;
+    let moneda = currency[i].textContent.toUpperCase();
+    subtotales[i].innerHTML = parseInt(cantidad * obtenerMoneda(precio, moneda));
   }
 }
 //Mostrar costo total de los productos en el carrito de compras
@@ -146,18 +146,25 @@ function tipoEnvio() {
   envioRapido = document.querySelector('#envioRapido').checked;
   envioExpress = document.querySelector('#envioExpress').checked;
   if (envioStandard) {
-    costeEnvio = costeDeProductosTotal * 0.05;
+    costeEnvio = parseInt(costeDeProductosTotal * 0.05);
   } else if (envioRapido) {
-    costeEnvio = costeDeProductosTotal * 0.07;
+    costeEnvio = parseInt(costeDeProductosTotal * 0.07);
   } else if (envioExpress) {
-    costeEnvio = costeDeProductosTotal * 0.15;
+    costeEnvio = parseInt(costeDeProductosTotal * 0.15);
   }
   mostrarPrecioEnvio.innerHTML = parseInt(costeEnvio);
 }
-
+//Carga el monto total a pagar sumandole el costo de envio
 function precioTotal() {
   let mostrarPrecioTotal = document.querySelector('#total');
   mostrarPrecioTotal.innerHTML = costeEnvio + costeDeProductosTotal;
+}
+//Ejecuta el calculo de todos los valores relacionados con el carrito para actualizar los valores
+function actualizarCostos(){
+  modificarSubtotal();
+  calcularCostos();
+  tipoEnvio();
+  precioTotal();
 }
 //Validaciones de datos
 const validacion = document.getElementById('validar');
@@ -361,21 +368,16 @@ validarDireccion.addEventListener('click', () => {
     mostrarMensajeError(mensajeErrorEsquina, 'Por favor, ingrese una esquina');
   }
 
- 
-
   if (calleValue !== '' && numeroDireccionValue !== '' && esquinaValue !== '') {
     modalDireccion.hide();
     validacionDireccion = true;
     alertaDireccionExito.style.display = 'block'; // Muestra la alerta de éxito
     alertaDireccionExito.classList.add('animate__bounceIn'); // Aplica la animación
     setTimeout(function () {
-
       // Closing the alert
       bsAlertaDireccion.close();
     }, 5000);
   }
-  
-  
 });
 
 function mostrarMensajeError(elemento, mensaje) {
@@ -383,8 +385,6 @@ function mostrarMensajeError(elemento, mensaje) {
 }
 
 //Botón comprar
-
-
 var alertaExitoBS = document.getElementById('alertaExito')
 var bsAlertaExito = new bootstrap.Alert(alertaExitoBS)
 
@@ -394,18 +394,11 @@ botonCompra.addEventListener('click',()=> {
     alertaExito.style.display = 'block'; // Muestra la alerta de éxito
     alertaExito.classList.add('animate__bounceIn'); // Aplica la animación
     setTimeout(function () {
-
       // Closing the alert
       bsAlertaExito.close();
     }, 8000);
   }
 });
-function actualizarCostos(){
-  modificarSubtotal();
-  calcularCostos();
-  tipoEnvio();
-  precioTotal();
-}
 function eliminarProducto(nombreProducto) {
   // Recupera el carrito del almacenamiento local
   let carritoLocalStorage = JSON.parse(localStorage.getItem('cartProducts')) || [];
@@ -425,7 +418,7 @@ function eliminarProducto(nombreProducto) {
   // Actualiza los costos después de eliminar un producto
   actualizarCostos();
 }
-
+//Agrega un elemento nuevo al carrito, si ya existia el producto modifica la cantidad de unidades en el carrito
 function agregarAlCarrito(productData, cantidadProducto) {
   let productoExistente = false;
   cantidadProducto = parseInt(cantidadProducto); 
@@ -451,9 +444,9 @@ function agregarAlCarrito(productData, cantidadProducto) {
   }
   // Guarda el arreglo actualizado en el localStorage
   localStorage.setItem('cartProducts', JSON.stringify(productosEnCarrito));
-  cartFromLocalStorage = JSON.parse(localStorage.getItem('cartProducts')) || [];
   productosEnCarrito = JSON.parse(localStorage.getItem('cartProducts')) || [];
-  showListFromStorage(cartFromLocalStorage);
+  productosEnCarrito = JSON.parse(localStorage.getItem('cartProducts')) || [];
+  showListFromStorage(productosEnCarrito);
   //console.log(cantidadProducto);
 }
 //Recorro la lista de productos del carrito que hay guardados en jap server
@@ -469,17 +462,10 @@ var bsAlertaPago = new bootstrap.Alert(alertaPago)
 /*--------------------------------------------------------------Conversión de monedas-----------------------------------------------------------*/
 function obtenerMoneda(num, currency){
   let pesos = 40;
-  let a = 1/pesos;
-  /*fetch()
-  .then(response=> response.json())
-  .then(data=>{
+  let a = 1/pesos;//Dolar sobre pesos para obtener el valor de conversión
 
-  })
-  .catch(error=>{
-    console.error("Error al cargar datos", error)
-  });*/
   if(currency==="UYU"){
-    return num*a;
+    return parseInt(num*a);
   }else if(currency==="USD"){
     return num;
   }
